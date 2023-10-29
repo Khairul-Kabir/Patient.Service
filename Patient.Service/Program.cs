@@ -6,6 +6,8 @@ using Patient.Service.Service.IService;
 using Patient.Service.Utility;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
 
 // Add services to the container.
 
