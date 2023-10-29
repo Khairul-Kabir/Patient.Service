@@ -3,6 +3,7 @@ using Patient.Service.Repository;
 using Patient.Service.Repository.IRepository;
 using Patient.Service.Service;
 using Patient.Service.Service.IService;
+using Patient.Service.Utility;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +25,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseMiddleware(typeof(GlobalErrorHandlingMiddleware));
 
 app.UseHttpsRedirection();
 
