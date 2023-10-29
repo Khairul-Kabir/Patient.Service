@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Patient.Service.Models;
 using Patient.Service.Service.IService;
+using WatchDog;
 
 namespace Patient.Service.Controllers
 {
@@ -16,6 +17,7 @@ namespace Patient.Service.Controllers
         public async Task<IActionResult> GetPatients()
         {
             var patients = await _patientService.GetAllPatients();
+            //WatchLogger.Log($"-Successful- {patients}");
             return Ok(patients);
         }
     }

@@ -5,6 +5,7 @@ using System;
 using UnauthorizedAccessException = System.UnauthorizedAccessException;
 using KeyNotFoundException = System.Collections.Generic.KeyNotFoundException;
 using NotImplementedException = System.NotImplementedException;
+using WatchDog;
 
 namespace Patient.Service.Utility
 {
@@ -118,7 +119,7 @@ namespace Patient.Service.Utility
 
                 default:
                     (status, message) = (HttpStatusCode.InternalServerError, $"Custom Error Message:- {exception.Message}");
-                    logger.LogError($"{(int)status}- {message}");
+                    WatchLogger.LogError($"-Error- {message}");
                     break;
             }
 

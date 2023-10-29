@@ -51,6 +51,10 @@
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.5, )"
+            },
+            "WatchDog.NET": {
+              "target": "Package",
+              "version": "[1.4.10, )"
             }
           },
           "imports": [
